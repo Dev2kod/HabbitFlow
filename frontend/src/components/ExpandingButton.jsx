@@ -8,8 +8,8 @@ const ExpandingButton = ({Before,after}) => {
     <div className="card1"  style={{
         display:"flex", 
         justifyContent:"center", 
-        width: hover ? "150px" : "30px",
-        height:"30px",
+        width: hover ? "150px" : "40px",
+        height:"40px",
         backgroundColor: hover ? "#030303" : "#030303",
         border:"1px solid #eeeeee",
         boxShadow: hover ? "0px 0px 30px 1px rgba(0, 255, 117, 0.30)" : "none",
@@ -22,8 +22,8 @@ const ExpandingButton = ({Before,after}) => {
         whiteSpace: "nowrap",
         transition: "all 400ms ease-in-out"}}>
             <div className='card2' style={{
-                width:hover? "150px" : "30px",
-                height:"30px",
+                width:hover? "150px" : "40px",
+                height:"40px",
                 backgroundColor:hover ? "#030303" : "#030303",
                 borderRadius:"0px",
                 overflow:"hidden",

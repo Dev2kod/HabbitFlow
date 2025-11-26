@@ -11,10 +11,10 @@ const Home = () => {
       <div style={{display: "flex", flexDirection: "column", height: "100vh"}}>   
         <Hero/>
         <Searchbar />
-        <div style={{ display: "flex",gap: "30px",marginTop:"10vh", justifyContent: "center"}}>
-        <ExpandingButton Before="Track Your Progress" after={<img src="./turtle.png" alt="progress" style={{width:"25px"}}/>} />
-        <ExpandingButton Before="Go Green Gallery" after={<img src="./leaf.png" alt="progress" style={{width:"25px"}}/>} />
-        <ExpandingButton Before="Explore New Hobby" after={<img src="./book.png" alt="book" style={{width:"25px"}}/>} />
+        <div style={{ display: "flex",gap: "40px",marginTop:"10vh", justifyContent: "center"}}>
+        <ExpandingButton Before="Track Your Progress" after={<img src="./turtle.png" alt="progress" style={{width:"40px"}}/>} />
+        <ExpandingButton Before="Go Green Gallery" after={<img src="./leaf.png" alt="progress" style={{width:"40px"}}/>} />
+        <ExpandingButton Before="Explore New Hobby" after={<img src="./book.png" alt="book" style={{width:"40px"}}/>} />
         </div>
     </div>
     <div style={{display: "flex", flexDirection: "column", height: "calc(100vh - 61px)",marginTop:"61px",backgroundColor:"#030303"}}>
@@ -32,14 +32,14 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src="./proj.svg" style={{width:"400px",justifyContent:"center",marginTop:"1vh"}} alt="" />
+          <img src="./transperant.png" style={{width:"400px",justifyContent:"center",marginTop:"1vh"}} alt="" />
         </div>
       </div>
       <hr />
-      <div style={{color:"white",display:"flex",height:"40vh",alignContent:"center",justifyContent:"space-around"}}> 
-          <Card title="Card 1"/>
-          <Card title="Card 2"/>
-          <Card title="Card 3"/>
+      <div className="card-container" style={{color:"white",display:"flex",height:"40vh",alignContent:"center",justifyContent:"space-around",margin:"0px 120px"}}> 
+          <Card title="Card 1" body="body"/>
+          <Card title="Card 2" body="body"/>
+          <Card title="Card 3" body="body"/>
       </div>
     </div>
   </div>
