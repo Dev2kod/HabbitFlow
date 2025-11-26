@@ -1,6 +1,6 @@
 import React from 'react'
-import Logo from './logo'
-import DarkButton from './darkButton'
+import Logo from './Logo'
+import DarkButton from './DarkButton'
 
 const Navbar = () => {
   return (
