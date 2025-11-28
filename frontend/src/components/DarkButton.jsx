@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const DarkButton = ({ text }) => {
+const DarkButton = (props) => {
   const [hover, setHover] = useState(false)
+    const navigate = useNavigate()
 
   return (
+    
     <div
       className="darkButtons"
       style={{
@@ -17,8 +20,9 @@ const DarkButton = ({ text }) => {
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-    >
-      {text}
+    onClick={()=>{navigate(`/${props.path}`)}}
+>
+      {props.text}
     </div>
   )
 }
