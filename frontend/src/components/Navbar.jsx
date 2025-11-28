@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Logo'
+import Logo from './logo'
 import DarkButton from './DarkButton'
 
 const Navbar = () => {
@@ -9,8 +9,8 @@ const Navbar = () => {
       <div className='logo'><Logo/></div>
       <div style={{display:"flex",gap:"15px"}}> 
         <link  />
-        <DarkButton text="Credits: 5"/>
-            <DarkButton text="Profile"/>
+        <DarkButton path="" text="Credits: 5"/>
+        <DarkButton text="Profile" path="profile"/>
       </div>
     </div>
     </div>
