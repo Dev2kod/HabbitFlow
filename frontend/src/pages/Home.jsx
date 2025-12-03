@@ -32,7 +32,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src="./transperant.png" style={{width:"400px",justifyContent:"center",marginTop:"1vh"}} alt="" />
+          <img src="./lady.svg" style={{width:"400px",justifyContent:"center",marginTop:"1vh"}} alt="" />
         </div>
       </div>
       <hr />
