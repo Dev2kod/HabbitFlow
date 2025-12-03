@@ -1,12 +1,11 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
+import { useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
-
 const Searchbar = (props) => {
+  const { task, setTask, todos, setTodos } = useContext(TaskTodoContext);
   const [hover, setHover] = useState(false);
   const [hover1, setHover1] = useState(false);
-  const { task, settask, todo, settodo } = useContext(TaskTodoContext);
-
   return (
     <>
       <div
@@ -34,6 +33,7 @@ const Searchbar = (props) => {
             cursor: "pointer",
             transition: "all 700ms",
           }}
+          onClick={props.handleclick}
           onMouseEnter={() => setHover1(true)}
           onMouseLeave={() => setHover1(false)}
         >
@@ -50,7 +50,11 @@ const Searchbar = (props) => {
               outline: "none",
             }}
             value={task}
-            onChange={(e)=>settask(e.target.value)}
+            onChange={
+              (e)=>{setTask(e.target.value)
+              console.log(task);
+              
+              }}
             placeholder={props.text}
           />
           <svg
@@ -73,7 +77,6 @@ const Searchbar = (props) => {
             }}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            onClick={(e)=>settodo([...todo,task])}
           >
             <circle cx="11" cy="11" r="6"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
