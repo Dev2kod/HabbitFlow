@@ -1,18 +1,16 @@
 import React, { useContext } from "react";
 import Searchbar from "../Searchbar";
 import { TaskTodoContext } from "../../context/Context";
-import Input from "../input";
+import Input2 from "../Input2";
 import TodoCard from "./TodoCard";
 
 const Todolist = () => {
   const { todo, settodo } = useContext(TaskTodoContext);
-  const handleDelete = (index) => {
-    settodo(todo.filter((_, i) => i !== index));
-  };
+ 
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Input text="add a todo" />
+        <Input2 text="add a todo" />
 
         <div
           style={{
@@ -26,22 +24,9 @@ const Todolist = () => {
             alignItems: "center",
           }}
         >
-          {todo.map((item, index) => {
-            return (
-              <div
-                className="maptodo"
-                key={index}
-                style={{ backgroundColor: "transparent", display: "flex" }}
-              >
-                <TodoCard
-                  key={index}
-                  item={item}
-                  index={index}
-                  onDelete={handleDelete}
-                />
-              </div>
-            );
-          })}
+          {todo.map((item, index) => (
+            <TodoCard key={index} index={index} body={index} title={item}/>            
+      ))}
         </div>
       </div>
     </>

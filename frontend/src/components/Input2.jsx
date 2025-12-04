@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
 
-const Input = (props) => {
+const Input2 = (props) => {
   const [hover, setHover] = useState(false);
   const [hover1, setHover1] = useState(false);
   const { task, settask, todo, settodo } = useContext(TaskTodoContext);
@@ -54,6 +54,13 @@ const Input = (props) => {
             onChange={(e) => {settask(e.target.value)
             console.log(task)
             }}
+            onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              {task.trim()?settodo([...todo, task]):
+            console.log(todo)
+          } // ✅ pressing Enter adds todo
+            }
+          }}
             placeholder={props.text}
           />
           <svg
@@ -74,9 +81,7 @@ const Input = (props) => {
               cursor: "pointer",
               transition: "all 250ms",
             }}
-            onClick={(e) => {task.trim()?settodo([...todo, task]):
-            console.log(todo)
-          }}
+            onClick={(e) => {task.trim()?settodo([...todo, task]): ""}}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
@@ -84,8 +89,8 @@ const Input = (props) => {
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };
-export default Input;
+export default Input2;

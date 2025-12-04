@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
 const Searchbar = (props) => {
-  const { task, setTask, todos, setTodos } = useContext(TaskTodoContext);
+  const [ip,setIp] = useState("")
   const [hover, setHover] = useState(false);
   const [hover1, setHover1] = useState(false);
   return (
@@ -49,9 +49,9 @@ const Searchbar = (props) => {
               fontSize: "18px",
               outline: "none",
             }}
-            value={task}
+            value={ip}
             onChange={
-              (e)=>{setTask(e.target.value)
+              (e)=>{setIp(e.target.value)
               console.log(task);
               
               }}
