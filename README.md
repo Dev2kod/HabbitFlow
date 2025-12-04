@@ -26,5 +26,15 @@ HabitFlow is a visually stunning, interactive platform designed to help users bu
 
 ---
 
-## 📂 Project Structure
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (>= 18)
+- npm or yarn
+
+### Installation
+```bash
+git clone https://github.com/yourusername/habitflow.git
+cd habitflow
+npm install
