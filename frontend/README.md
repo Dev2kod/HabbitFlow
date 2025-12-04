@@ -1,16 +1,30 @@
-# React + Vite
+# HabitFlow 🌱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HabitFlow is a visually stunning, interactive platform designed to help users build and track habits with delight. It combines modern UI/UX principles, creative CSS animations, and responsive design to deliver a unique experience that goes beyond standard productivity apps.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Modern UI/UX**: Creative backgrounds, custom fonts, and polished components.
+- **Responsive Design**: Fluid layouts using `vh`, `vw`, and `%` units for seamless adaptation across devices.
+- **Theme Switching**: Robust dark/light mode with scalable context management.
+- **Interactive Feedback**: Subtle animations (shake, glow, fade-out) and toggles to make the interface feel alive.
+- **Accessibility**: Keyboard shortcuts, event handlers, and ARIA-friendly components.
+- **Reusable Components**: Modular design for buttons, cards, search bars, and input fields.
+- **State Management**: Context providers and custom hooks for todos, login flows, and theme handling.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend Framework**: React
+- **Styling**: Inline CSS with viewport units, layered gradients, and hover transitions
+- **State Management**: React Context API, custom hooks
+- **Animations**: CSS transitions, keyframes, and subtle feedback effects
+- **Build Tools**: Vite / Create React App (depending on setup)
+
+---
+
+## 📂 Project Structure
+
