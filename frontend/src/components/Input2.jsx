@@ -1,11 +1,12 @@
 import React from "react";
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
-const Searchbar = (props) => {
-  const [ip,setIp] = useState("")
+
+const Input2 = (props) => {
   const [hover, setHover] = useState(false);
   const [hover1, setHover1] = useState(false);
+  const { task, settask, todo, settodo } = useContext(TaskTodoContext);
+
   return (
     <>
       <div
@@ -18,6 +19,7 @@ const Searchbar = (props) => {
         }}
       >
         <div
+          
           className="searchbox"
           style={{
             display: "flex",
@@ -33,7 +35,6 @@ const Searchbar = (props) => {
             cursor: "pointer",
             transition: "all 700ms",
           }}
-          onClick={props.handleclick}
           onMouseEnter={() => setHover1(true)}
           onMouseLeave={() => setHover1(false)}
         >
@@ -49,12 +50,17 @@ const Searchbar = (props) => {
               fontSize: "18px",
               outline: "none",
             }}
-            value={ip}
-            onChange={
-              (e)=>{setIp(e.target.value)
-              console.log(task);
-              
-              }}
+            value={task}
+            onChange={(e) => {settask(e.target.value)
+            console.log(task)
+            }}
+            onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              {task.trim()?settodo([...todo, task]):
+            console.log(todo)
+          } // ✅ pressing Enter adds todo
+            }
+          }}
             placeholder={props.text}
           />
           <svg
@@ -75,6 +81,7 @@ const Searchbar = (props) => {
               cursor: "pointer",
               transition: "all 250ms",
             }}
+            onClick={(e) => {task.trim()?settodo([...todo, task]): ""}}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
@@ -82,8 +89,8 @@ const Searchbar = (props) => {
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };
-export default Searchbar;
+export default Input2;

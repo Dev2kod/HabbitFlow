@@ -20,7 +20,7 @@ const DarkButton = (props) => {
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-    onClick={()=>{navigate(`/${props.path}`)}}
+      onClick={props.onClick}
 >
       {props.text}
     </div>
