@@ -1,45 +1,40 @@
 const validate = (name, email, pass) => {
-  // Trim values to avoid accidental spaces
-  const trimmedName = name.trim();
-  const trimmedEmail = email.trim();
-  const trimmedPass = pass.trim();
-
-  // Name validation
-  if (!trimmedName) {
+  if (name === "") {
     alert("Name is required");
     return false;
   }
-  if (!/^[a-zA-Z\s]+$/.test(trimmedName)) {
-    alert("Name should only contain letters and spaces");
-    return false;
-  }
 
-  // Email validation
-  if (!trimmedEmail) {
+  if (email === "") {
     alert("Email is required");
     return false;
   }
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(trimmedEmail)) {
-    alert("Please enter a valid email address");
+  if (!email.includes("@")) {
+    alert("Email must contain @");
     return false;
   }
 
-  // Password validation
-  if (!trimmedPass) {
+  if (pass === "") {
     alert("Password is required");
     return false;
   }
-  if (trimmedPass.length < 6) {
-    alert("Password must be at least 6 characters long");
+  if (pass.length < 6) {
+    alert("Password must be at least 6 characters");
     return false;
   }
-  if (!/[0-9]/.test(trimmedPass)) {
+
+  // Check if password has at least one number
+  let hasNumber = false;
+  for (let i = 0; i < pass.length; i++) {
+    if (!isNaN(pass[i])) {
+      hasNumber = true;
+      break;
+    }
+  }
+  if (!hasNumber) {
     alert("Password must contain at least one number");
     return false;
   }
 
-  // If all checks pass
   alert("Validation successful!");
   return true;
 };
