@@ -11,7 +11,7 @@ const DarkButton = (props) => {
       className="darkButtons"
       style={{
         marginTop: "5px",
-        borderRadius: "20px",
+        borderRadius: "10px",
         color: hover ? "#ffffff" : "#aaaaaa",
         padding: "8px 16px",
         border: hover ? "1px solid #3effdfff":"1px solid #00c9a7",

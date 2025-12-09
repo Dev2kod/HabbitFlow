@@ -15,7 +15,7 @@ const Profile = () => {
 
   return (<>
     <div
-      style={{
+       style={{
         backgroundColor: "#eeeeee",
         padding: "20px",
         width: "220px",

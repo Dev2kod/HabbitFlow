@@ -29,16 +29,22 @@ const TodoCard = (props) => {
       onMouseLeave={() => setHovered(false)}
     >
       <div>
-        {hovered ? (
+        {hovered ? ( 
           <div
             style={{
+              display:"flex",
+              flexDirection:"column",
+              alignItems:"center",
+              gap:"2vh",
               fontFamily: "'Algance', sans-serif",
               fontSize: "2.5vh",   // scales with viewport height
             }}
           >
             <div>{props.body}</div>
-            <DarkButton onClick={()=>handleDelete(props.index) } text="delete"/>
-
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:"10vh",position:"absolute",bottom:"5vh"}}>
+              <div><DarkButton style={{height:"5vh"}}/></div>
+              <div><img src="./delete.png" style={{height:"5vh",cursor:"pointer"}}alt="" /></div>
+            </div>
           </div>
         ) : (
           <div

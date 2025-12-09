@@ -25,7 +25,7 @@ const Todolist = () => {
           }}
         >
           {todo.map((item, index) => (
-            <TodoCard key={index} index={index} body={index} title={item}/>            
+            <TodoCard key={index} index={index} body={item} title={item}/>            
       ))}
         </div>
       </div>
