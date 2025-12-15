@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
 const Searchbar = (props) => {
-  const [ip,setIp] = useState("")
+  const [ip, setIp] = useState("");
   const [hover, setHover] = useState(false);
   const [hover1, setHover1] = useState(false);
   return (
@@ -28,7 +28,7 @@ const Searchbar = (props) => {
             borderRadius: "30px",
             background: "#030303",
             boxShadow: hover1
-              ? "15px 15px 15px rgb(60,60,60), -15px -15px 30px rgb(25, 25, 25)"
+              ? "15px 5px 15px rgb(60,60,60), -15px -15px 10px rgb(30, 25, 25)"
               : "15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60)",
             cursor: "pointer",
             transition: "all 700ms",
@@ -50,24 +50,15 @@ const Searchbar = (props) => {
               outline: "none",
             }}
             value={ip}
-            onChange={
-              (e)=>{setIp(e.target.value)
+            onChange={(e) => {
+              setIp(e.target.value);
               console.log(task);
-              
-              }}
+            }}
             placeholder={props.text}
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={hover ? "#ffffffff" : "#d2d2d2ff"}
-            transform={hover ? "scale(1.1)" : "scale(1)"}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <img
+          src="./search.svg"
+            height="20px"
             style={{
               marginRight: "20px",
               padding: "10px",
@@ -75,12 +66,11 @@ const Searchbar = (props) => {
               cursor: "pointer",
               transition: "all 250ms",
             }}
+            className="h-11"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
-            <circle cx="11" cy="11" r="6"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
+          </img>
         </div>
       </div>{" "}
     </>

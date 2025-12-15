@@ -3,8 +3,7 @@ import { useState, useContext } from "react";
 import { TaskTodoContext } from "../context/Context";
 
 const Input2 = (props) => {
-  const [hover, setHover] = useState(false);
-  const [hover1, setHover1] = useState(false);
+ 
   const { task, settask, todo, settodo } = useContext(TaskTodoContext);
 
   return (
@@ -13,8 +12,8 @@ const Input2 = (props) => {
         className="container"
         style={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
+        marginLeft:"20vh",
         marginTop: "5vh",
         }}
       >
@@ -22,21 +21,17 @@ const Input2 = (props) => {
           
           className="searchbox"
           style={{
-display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          display: "flex",
+          alignItems:"center",
+          gap:"1rem",
           width: "400px",
           height: "55px",
           borderRadius: "20px",
-          background: "#111",
-          boxShadow: hover1
-            ? "0 6px 12px rgba(0,0,0,0.25)"
-            : "0 3px 6px rgba(0,0,0,0.15)",
           transition: "all 300ms ease",
           padding: "0 15px",          }}
-          onMouseEnter={() => setHover1(true)}
-          onMouseLeave={() => setHover1(false)}
+          
         >
+          <img width="24px" height="24px" src="https://img.icons8.com/doodle/48/add.png" alt="add"/>
           <input
             type="text"
             style={{
@@ -61,30 +56,7 @@ display: "flex",
           }}
             placeholder={props.text}
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={hover ? "#ffffffff" : "#d2d2d2ff"}
-            transform={hover ? "scale(1.1)" : "scale(1)"}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{
-            cursor: "pointer",
-            backgroundClip:"text",
-            transition: "transform 200ms ease, stroke 200ms ease",
-            transform: hover ? "scale(1.15)" : "scale(1)",
-            }}
-            onClick={(e) => {task.trim()?settodo([...todo, task]): ""}}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          >
-            <circle cx="11" cy="11" r="6"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
+          
         </div>
       </div>
     </>

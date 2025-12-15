@@ -11,16 +11,17 @@ const ExpandingButton = ({ Before, after }) => {
         className="card1"
         style={{
           display: "flex",
+          alignItems:"center",
           justifyContent: "center",
-          width: hover ? "150px" : "40px",
-          height: "40px",
+          width: hover ? "25vh" : "8vh",
+          height: "8vh",
           backgroundColor: hover ? "#030303" : "#030303",
           border: "1px solid #eeeeee",
           boxShadow: hover
             ? "0px 0px 30px 1px rgba(0, 255, 117, 0.30)"
             : "none",
           padding: "10px",
-          borderRadius: "20px",
+          borderRadius: "8vh",
           cursor: "pointer",
           fontSize: "15px",
           fontWeight: "bold",

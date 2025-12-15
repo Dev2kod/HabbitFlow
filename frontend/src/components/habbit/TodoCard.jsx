@@ -1,65 +1,37 @@
-import { useState } from 'react'
-import DarkButton from '../DarkButton';
+import { useState } from "react";
+import DarkButton from "../DarkButton";
 import { TaskTodoContext } from "../../context/Context";
-import { useContext } from 'react';
+import { useContext } from "react";
 const TodoCard = (props) => {
-    const { todo, settodo } = useContext(TaskTodoContext);
+  const { todo, settodo } = useContext(TaskTodoContext);
   const [hovered, setHovered] = useState(false);
-   const handleDelete = (index) => {
+  const handleDelete = (index) => {
     settodo(todo.filter((_, i) => i !== index));
   };
   return (
     <div
-      className="card"
-      style={{
-        marginTop: "3vh",
-        border: hovered ? "0.3vh solid #00efc7ff" : "0.1vh solid #eeeeee",
-        borderRadius: "5%",
-        width: "20vw",          // responsive width
-        height: "35vh",         // responsive height
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "5%",
-        transition: "0.3s ease-in-out",
-        transform: hovered ? "scale(1.05)" : "none"
-      }}
+      className="flex items-center gap-4 p-4 bg-amber-100 rounded-lg hover:bg-amber-50"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div>
-        {hovered ? ( 
-          <div
-            style={{
-              display:"flex",
-              flexDirection:"column",
-              alignItems:"center",
-              gap:"2vh",
-              fontFamily: "'Algance', sans-serif",
-              fontSize: "2.5vh",   // scales with viewport height
-            }}
-          >
-            <div>{props.body}</div>
-            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:"10vh",position:"absolute",bottom:"5vh"}}>
-              <div><DarkButton style={{height:"5vh"}}/></div>
-              <div><img src="./delete.png" style={{height:"5vh",cursor:"pointer"}}alt="" /></div>
+      <div className="flex justify-around flex-1">
+        <div className="flex gap-2 flex-1">
+          <div className="flex gap-2">
+            <div onClick={() => handleDelete(props.index)}>
+              <img
+                src="./tick.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <DarkButton />
             </div>
           </div>
-        ) : (
-          <div
-            style={{
-              fontFamily: "'Algance', sans-serif",
-              fontSize: "2.5vh",
-              transition: "0.3s ease-in-out"
-            }}
-          >
-            {props.title}
-          </div>
-        )}
+          <div>{props.body}</div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoCard
+export default TodoCard;
